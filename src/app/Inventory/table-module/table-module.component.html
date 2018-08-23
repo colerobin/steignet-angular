@@ -1,0 +1,35 @@
+<div class="table-module">
+  <div class="table-module-top">
+    <span>{{title}}</span>
+    <div class="table-module-action">
+      <div class="date-range-select">
+        <button class="dropbtn">
+          <span>Date Range</span>
+          <i class="fa fa-angle-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="">Range 1</a>
+          <a href="">Range 2</a>
+          <a href="">Range 3</a>
+        </div>
+      </div>
+      <button id="module-menu"></button>
+    </div>
+  </div>
+  <table>
+    <tr>
+      <th *ngFor="let headText of data[0]">{{headText}}</th>
+      <th>Total</th>
+    </tr>
+    <tr *ngFor="let line of data.slice(1); index as i">
+      <td>{{line[0]}}</td>
+      <td *ngFor="let item of line.slice(1)">{{formatText(item)}}</td>
+      <td>{{formatText(totalCol[i+1])}}</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td *ngFor="let total of totalRow.slice(1)">{{formatText(total)}}</td>
+      <td>{{formatText(totalSum)}}</td>
+    </tr>
+  </table>
+</div>

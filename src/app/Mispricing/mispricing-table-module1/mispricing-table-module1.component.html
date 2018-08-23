@@ -1,0 +1,71 @@
+<div class="mispricing-table-module">
+  <div class="table-module-top">
+    <span>{{title}}</span>
+    <div class="table-module-action">
+      <div class="date-range-select">
+        <button class="dropbtn">
+          <span>Date Range</span>
+          <i class="fa fa-angle-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="">Range 1</a>
+          <a href="">Range 2</a>
+          <a href="">Range 3</a>
+        </div>
+      </div>
+      <button id="module-menu"></button>
+    </div>
+  </div>
+  <table>
+    <tr>
+      <th>Inventory</th>
+      <th>Active Listings</th>
+      <th><-5%</th>
+      <th>(5%-10%)</th>
+      <th>(10%-15%)</th>
+      <th>(15%-20%)</th>
+      <th>(25%-30%)</th>
+      <th>(30%+)</th>
+    </tr>
+    <tr *ngFor="let line of data[0]; index as i;" [ngClass]="{'divider':i==0}">
+      <td>{{line[0]}}</td>
+      <td>{{formatText(line[1])}}</td>
+      <td>{{line[2]}}</td>
+      <td>{{line[3]}}</td>
+      <td>{{line[4]}}</td>
+      <td>{{line[5]}}</td>
+      <td>{{line[6]}}</td>
+      <td>{{line[7]}}</td>
+    </tr>
+    <tr *ngFor="let line of data[1]; index as i;" [ngClass]="{'divider':i==0}">
+      <td>{{line[0]}}</td>
+      <td>{{formatText(line[1])}}</td>
+      <td>{{line[2]}}</td>
+      <td>{{line[3]}}</td>
+      <td>{{line[4]}}</td>
+      <td>{{line[5]}}</td>
+      <td>{{line[6]}}</td>
+      <td>{{line[7]}}</td>
+    </tr>
+    <tr *ngFor="let line of data[2]; index as i;" [ngClass]="{'divider':i==0}">
+      <td>{{line[0]}}</td>
+      <td>{{formatText(line[1])}}</td>
+      <td>{{line[2]}}</td>
+      <td>{{line[3]}}</td>
+      <td>{{line[4]}}</td>
+      <td>{{line[5]}}</td>
+      <td>{{line[6]}}</td>
+      <td>{{line[7]}}</td>
+    </tr>
+    <tr class="divider">
+      <td>Total</td>
+      <td>{{formatText(total)}}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>

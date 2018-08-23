@@ -1,0 +1,14 @@
+<div id="navbar">
+  <a id="inventory" href='/inventory' [ngClass]="calculateClasses('/inventory')">
+    <span>Inventory</span>
+  </a>
+  <a id="mispricings" href='/mispricing' [ngClass]="calculateClasses('/mispricing')">
+    <span>Mispricings</span>
+  </a>
+  <a id="error-summary" href='/error' [ngClass]="calculateClasses('/error')">
+    <span>Error Summary</span>
+  </a>
+  <a id="search" href='/search' [ngClass]="calculateClasses('/search')">
+    <span>Search</span>
+  </a>
+</div>

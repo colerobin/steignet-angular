@@ -1,0 +1,20 @@
+<div *ngIf="!showResult" class="row">
+  <div class="col-md-4">
+    <div class="module-container">
+      <app-property-search-module></app-property-search-module>
+    </div>
+    <app-remarks-search-module></app-remarks-search-module>
+  </div>
+  <div class="col-md-4">
+    <app-location-search-module></app-location-search-module>
+  </div>
+  <div class="col-md-4">
+    <app-status-search-module></app-status-search-module>
+  </div>
+</div>
+
+<div *ngIf="showResult" class="row">
+  <div class="col">
+    <app-show-results-module></app-show-results-module>
+  </div>
+</div>

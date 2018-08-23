@@ -1,0 +1,21 @@
+<div class="status-search-module">
+  <div class="module-header">
+    <span class="module-header-title">Status - Date or Range</span>
+    <span class="module-header-btn">
+      <i class="fa fa-angle-down"></i>
+    </span>
+  </div>
+  <div id="module-content" class="module-content">
+    <div *ngFor="let label of labels; index as i" class="status-item">
+      <div [ngClass]="{'radio-btn':true, 'radio-selected':i==index}" (click)="selectStatus(i)">
+        <div class="radio-bg">
+          <div class="radio-dot"></div>
+        </div>
+        {{label}}
+      </div>
+      <span class="date-icon">
+        <i class="fa fa-calendar"></i>
+      </span>
+    </div>
+  </div>
+</div>

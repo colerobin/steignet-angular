@@ -1,0 +1,38 @@
+<div class="inventory-chart-module">
+  <div class="chart-module-top">
+    <span>{{title}}</span>
+    <div class="chart-module-action">
+      <div class="date-range-select">
+        <button class="dropbtn">
+          <span>Option</span>
+          <i class="fa fa-angle-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="">Option 1</a>
+          <a href="">Option 2</a>
+          <a href="">Option 3</a>
+        </div>
+      </div>
+      <button id="module-menu"></button>
+    </div>
+  </div>
+
+  <div>
+    <ngx-charts-pie-chart
+      class="chart-container"
+      [scheme]="colorScheme"
+      [results]="data"
+      [animations]="animations"
+      [legend]="showLegend"
+      [legendTitle]="legendTitle"
+      [explodeSlices]="explodeSlices"
+      [labels]="showLabels"
+      [doughnut]="doughnut"
+      [arcWidth]="arcWidth"
+      (legendLabelClick)="onLegendLabelClick($event)"
+      [gradient]="gradient"
+      (dblclick)="dblclick($event)"
+      (select)="select($event)">
+    </ngx-charts-pie-chart>
+  </div>
+</div>

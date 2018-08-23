@@ -1,0 +1,295 @@
+<div class="table-module">
+  <div class="table-module-top">
+    <span>Search Results</span>
+    <span [ngClass]="{'tab-btn': true, 'tab-active': showFinancial()}" (click)="showTab(1)">Financial Details</span>
+    <span [ngClass]="{'tab-btn': true, 'tab-active': !showFinancial()}" (click)="showTab(2)">Property Details</span>
+    <div class="table-module-action">
+      <div class="date-range-select">
+        <button class="dropbtn">
+          <span>Date Range</span>
+          <i class="fa fa-angle-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="">Range 1</a>
+          <a href="">Range 2</a>
+          <a href="">Range 3</a>
+        </div>
+      </div>
+      <button id="module-menu"></button>
+    </div>
+  </div>
+  <table class="financial-table" *ngIf="tab == 1">
+    <tr>
+      <th>MLS ID</th>
+      <th>Status</th>
+      <th>Property</th>
+      <th>Original Price</th>
+      <th>Prev Price</th>
+      <th>Ask Price</th>
+      <th>$ Change</th>
+      <th>$ Change OLP</th>
+      <th>% Change</th>
+      <th>% Change OLP</th>
+      <th>Zestimate</th>
+      <th>Redfin</th>
+      <th>Average</th>
+      <th>AVM Delta Premium</th>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td>A</td>
+      <td>Realm</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>7%</td>
+      <td>7%</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td>A</td>
+      <td>Realm</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>7%</td>
+      <td>7%</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td>A</td>
+      <td>Realm</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>7%</td>
+      <td>7%</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td>A</td>
+      <td>Realm</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>7%</td>
+      <td>7%</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td>A</td>
+      <td>Realm</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>7%</td>
+      <td>7%</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td>A</td>
+      <td>Realm</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>7%</td>
+      <td>7%</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td>A</td>
+      <td>Realm</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>7%</td>
+      <td>7%</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td>A</td>
+      <td>Realm</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>7%</td>
+      <td>7%</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+      <td>$100,000</td>
+    </tr>
+  </table>
+  <table class="property-table" *ngIf="tab == 2">
+    <tr>
+      <th>MLS ID</th>
+      <th>Status</th>
+      <th>Property</th>
+      <th>Address</th>
+      <th>Unit</th>
+      <th>Neighborhood</th>
+      <th>Year Built</th>
+      <th># of Bdrm</th>
+      <th># of Baths</th>
+      <th>Sq Ft</th>
+      <th>$/Sqft List</th>
+      <th>Tax ID</th>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2345222</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>

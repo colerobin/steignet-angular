@@ -1,0 +1,21 @@
+<div class="login-page-container">
+  <div class="login-form-container">
+    <div class="login-form">
+      <div class="logo-container loginform-item">
+        <img src="../../assets/images/login_logo.png">
+      </div>
+      <div class="input-username loginform-item">
+        <input type="text" name="username" placeholder="Username" #username>
+      </div>
+      <div class="input-password loginform-item">
+        <input type="password" name="password" placeholder="Password" #password>
+      </div>
+      <div class="input-googleauth loginform-item">
+        <input type="text" name="googleauth" placeholder="Google Auth" #googleauth>
+      </div>
+      <div class="button-submit loginform-item">
+        <input type="button" name="submit" value="Submit" (click)="onSubmit(username.value, password.value, googleauth.value)">
+      </div>
+    </div>
+  </div>
+</div>

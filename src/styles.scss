@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+$padding: 15px;
+$margin: 5px;
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+#container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  #content {
+    flex-grow: 1;
+    padding: 20px 15px;
+    background-color: #19191C;
+  }
+}
+
+#navbar {
+  height: 50px;
+  padding: 0 $padding;
+  background: linear-gradient(#111141, #02061F);
+}
+
+.navbtn {
+  display: inline-block;
+  height: 100%;
+  margin: 0 $margin;
+  padding: 0 $padding;
+  padding-top: 15px;
+  span {
+    color: white;
+  }
+}
+
+.navActive {
+  border-bottom: 3px solid white;
+}
+
+.ngx-charts {
+  text {
+    fill: white;
+  }
+}
+
+.legend-labels {
+  width: unset !important;
+}
+
+
+.chart-legend .legend-label-text {
+  color: white !important;
+}
+
+
+$helvetica-neue-font-path: "./assets/fonts/HelveticaNeue.ttf";
+$helvetica-neue-bold-font-path: "./assets/fonts/HelveticaNeueBd.ttf";
+$font-family-brand: 'helvetica-neue';

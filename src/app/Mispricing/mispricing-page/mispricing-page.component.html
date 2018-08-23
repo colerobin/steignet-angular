@@ -1,0 +1,27 @@
+<div id="mispricing-container">
+  <ul id="sortable">
+    <li class="row">
+      <div class="col-sm-12">
+        <app-table-line-chart-module [data]="tableLineChartData" ></app-table-line-chart-module>
+      </div>
+    </li>
+    <li class="row">
+      <div class="col-sm-12">
+        <app-line-chart-module [data]="lineChartData"></app-line-chart-module>
+      </div>
+    </li>
+    <li class="row">
+      <div class="col-xl-6">
+        <app-mispricing-table-module1 [title]="'Mispricing as a % of Inventory'"></app-mispricing-table-module1>
+      </div>
+      <div class="col-xl-6">
+        <app-mispricing-table-module2></app-mispricing-table-module2>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="add-btn-container">
+  <button class="add-module-btn">
+    <i class="fa fa-plus"></i>
+  </button>
+</div>

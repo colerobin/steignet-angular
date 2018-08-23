@@ -1,0 +1,56 @@
+<div class="line-chart-module">
+  <div class="line-chart-module-top">
+    <div class="table-header-left">
+      <button>
+        <span>
+          Mispricings
+        </span>
+        <i class="fa fa-angle-down"></i>
+      </button>
+      <button>
+        <span>
+          Atlanta
+        </span>
+        <i class="fa fa-angle-down"></i>
+      </button>
+    </div>
+    <div class="table-module-action">
+      <div class="date-range-select">
+        <button class="dropbtn">
+          <span>Date Range</span>
+          <i class="fa fa-angle-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="">Range 1</a>
+          <a href="">Range 2</a>
+          <a href="">Range 3</a>
+        </div>
+      </div>
+      <button id="module-menu"></button>
+    </div>
+  </div>
+  <div class="line-chart-area">
+    <ngx-charts-line-chart
+      class="chart-container"
+      [scheme]="colorScheme"
+      [schemeType]="schemeType"
+      [results]="data"
+      [animations]="animations"
+      [legend]="showLegend"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [autoScale]="autoScale"
+      [xScaleMin]="xScaleMin"
+      [xScaleMax]="xScaleMax"
+      [yScaleMin]="yScaleMin"
+      [yScaleMax]="yScaleMax"
+      [timeline]="timeline"
+      [showGridLines]="showGridLines"
+      [curve]="curve"
+      [roundDomains]="roundDomains"
+      [tooltipDisabled]="tooltipDisabled"
+      >
+    </ngx-charts-line-chart>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+.table-module {
+  width: 100%;
+  border: 1px solid #7B7B7B;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 12px;
+}
+
+.table-module table {
+  width: 100%;
+}
+
+.table-module-top {
+  width: 100%;
+  height: 35px;
+  padding: 7px 10px 7px 15px;
+  background: linear-gradient(to left, #193046, #2F345A);
+}
+
+.table-module-top span {
+  font-size: 15px;
+}
+
+.table-module-top .tab-btn {
+  margin-left: 30px;
+  font-size: 10px;
+}
+
+.table-module-top .tab-active {
+  font-weight: bold;
+}
+
+.table-module-action {
+  float: right;
+  height: 20px;
+  display: flex;
+}
+
+.table-module-action .date-range-select {
+  margin-right: 10px;
+  height: 20px;
+  width: 110px;
+  border: 1px solid #707070;
+}
+
+.table-module-action .date-range-select button {
+  width: 100%;
+  height: 100%;
+  padding: 0 7px;
+  background: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.table-module-action .date-range-select button span {
+  font-size: 11px;
+}
+
+.table-module-action .date-range-select button i {
+  font-size: 15px;
+}
+
+.table-module-action .date-range-select .dropdown-content {
+  display: none;
+  position: absolute;
+  border: 1px solid #707070;
+  z-index: 1;
+}
+
+.table-module-action .date-range-select .dropdown-content a {
+  display: block;
+  width: 108px;
+  height: 20px;
+  padding-left: 7px;
+  border-bottom: 1px solid #707070;
+  background: #193046;
+  color: white;
+  text-decoration: unset;
+}
+
+.table-module-action .date-range-select:hover .dropdown-content {
+  display: block;
+}
+
+.table-module-action #module-menu {
+  height: 20px;
+  width: 27px;
+  background: url(../../../assets/images/module_menu.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+}
+
+table tr {
+  border-top: 1px solid #707070;
+  height: 30px;
+}
+
+table tr th,
+table tr td {
+  text-align: center;
+}
+
+th:nth-child(1),
+th:nth-child(3),
+th:nth-child(6),
+th:nth-child(10),
+th:nth-child(13),
+td:nth-child(1),
+td:nth-child(3),
+td:nth-child(6),
+td:nth-child(10),
+td:nth-child(13) {
+  border-right: 1px solid #707070;
+}
+
+td:nth-child(2) {
+  color: #06C406;
+}
