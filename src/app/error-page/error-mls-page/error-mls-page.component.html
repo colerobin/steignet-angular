@@ -1,0 +1,22 @@
+<div id="error-page-container">
+  <ul id="sortable">
+    <li class="row error-page-unit">
+      <div class="col-sm-12">
+        <app-error-page-mlsoverview-module>
+        </app-error-page-mlsoverview-module>
+      </div>
+    </li>
+    <li class="row error-page-unit">
+      <div class="col-sm-12">
+        <app-error-page-analysis-table [chart]="residential">
+        </app-error-page-analysis-table>
+      </div>
+    </li>
+    <li class="row error-page-unit">
+      <div class="col-sm-12">
+        <app-error-page-analysis-table [chart]="rental">
+        </app-error-page-analysis-table>
+      </div>
+    </li>
+  </ul>
+</div>

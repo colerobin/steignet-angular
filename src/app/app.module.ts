@@ -34,12 +34,17 @@ import { ErrorPageMLSOverviewComponent } from './error-page/error-page-mlsovervi
 import { ErrorPageAnalysisComponent } from './error-page/error-page-analysis-table/error-page-analysis-table.component';
 import { ErrorPageTotalYearComponent } from './error-page/error-page-totalyear-table/error-page-totalyear-table.component';
 import { ErrorPageLineChartComponent } from './error-page/error-page-line-chart/error-page-line-chart.component';
+import { ErrorDailyPageComponent } from './error-page/error-daily-page/error-daily-page.component';
+import { ErrorDetailsPageComponent } from './error-page/error-details-page/error-details-page.component';
+import { ErrorErrorPageComponent } from './error-page/error-error-page/error-error-page.component';
+import { ErrorMLSPageComponent } from './error-page/error-mls-page/error-mls-page.component';
 import { LoginPageComponent } from './login/login.component';
 import { AuthGuard } from './_guards';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AlertService, AuthenticationService, UserService } from './_services';
 import { AlertComponent } from './_directives';
 
+import { Globals } from './globals';
 
 
 enableProdMode();
@@ -69,6 +74,10 @@ enableProdMode();
     ErrorPageAnalysisComponent,
     ErrorPageTotalYearComponent,
     ErrorPageLineChartComponent,
+    ErrorDailyPageComponent,
+    ErrorDetailsPageComponent,
+    ErrorErrorPageComponent,
+    ErrorMLSPageComponent,
     LoginPageComponent,
     AlertComponent
   ],
@@ -83,6 +92,7 @@ enableProdMode();
     AuthGuard,
     AlertService,
     AuthenticationService,
+    Globals,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],

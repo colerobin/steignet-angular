@@ -18,6 +18,16 @@ export class NavbarComponent implements OnInit {
   }
 
   calculateClasses(route) {
+    if(this.router.url === "/error-mls" || this.router.url === "/error-details" || this.router.url === "/error-daily" || this.router.url === "/error-error")
+    {
+      if (route === "/error")
+      {
+        return {
+          navbtn: true,
+          navActive: true
+        };
+      }
+    }
     return {
       navbtn: true,
       navActive: this.router.url === route

@@ -1,14 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { stackedChart_residential, stackedChart_rental } from '../../dummy/errorpage';
 
 declare var $: any;
 
 @Component({
-  selector: 'app-error-page',
-  templateUrl: './error-page.component.html',
-  styleUrls: ['./error-page.component.scss']
+  selector: 'app-error-mls-page',
+  templateUrl: './error-mls-page.component.html',
+  styleUrls: ['./error-mls-page.component.scss']
 })
-export class ErrorPageComponent implements OnInit {
+export class ErrorMLSPageComponent implements OnInit {
 
   residential = "R1";
   rental = "R2";

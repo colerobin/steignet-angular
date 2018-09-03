@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { AlertService, AuthenticationService } from '../_services';
 
+import { Globals } from '../globals';
+
 declare var $: any;
 
 
@@ -17,11 +19,15 @@ export class LoginPageComponent implements OnInit {
 	loading = false;
 	returnUrl: string;
 
-  constructor(
-  		private route: ActivatedRoute,
-  		private router: Router,
-      private authenticationService: AuthenticationService,
-      private alertService: AlertService) { }
+  private backend_url: string;
+
+  constructor( private globals: Globals,
+  		        private route: ActivatedRoute,
+  		        private router: Router,
+              private authenticationService: AuthenticationService,
+              private alertService: AlertService) { 
+    this.backend_url = globals.backend_url;
+  }
 
   ngOnInit() {
   	this.authenticationService.logout();
@@ -30,17 +36,31 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmit(username, password, googleauth) {
-  	if (username == "admin" && password == "admin123")
-  	{
-  		if (this.returnUrl == "")
-  		{
-  			this.returnUrl = "inventory";
-  		}
-  		localStorage.setItem("currentUser", "1");
-  		window.location.href = this.returnUrl;
-  	}
-  	else
-  		alert("incorrect!");
+
+    $.ajax({
+      url: this.backend_url+'/login',
+      method: 'get',
+      data: {
+        username: username,
+        password: password
+      },
+      success: function(result){
+        if (result == "success")
+        {
+          alert("Congratulations!");
+          if (this.returnUrl == "")
+          {
+            this.returnUrl = "inventory";
+          }
+          localStorage.setItem("currentUser", "1");
+          window.location.href = this.returnUrl;
+        }
+        else{
+          alert("Incorrect!");
+        }
+      }
+    });
+
   }
   logout() {
   	localStorage.removeItem("currentUser");
