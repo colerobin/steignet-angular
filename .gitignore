@@ -4,3 +4,4 @@ dist/
 dist.zip
 draggable.directive.ts
 
+src/app/globals.ts
