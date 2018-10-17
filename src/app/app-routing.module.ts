@@ -18,6 +18,16 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'inventory-master',
+    component: InventoryPageComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'inventory-rental',
+    component: InventoryPageComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'search',
     component: SearchPageComponent,
     canActivate: [AuthGuard]

@@ -8,13 +8,13 @@
   <div class="module-content">
     <div class="heading-text">Type</div>
     <div class="type-selector">
-      <div class="radio-btn radio-selected">
+      <div class="radio-btn radio-selected radio-property" (click)="deattachselect()" id="deattachdiv">
         <div class="radio-bg">
           <div class="radio-dot"></div>
         </div>
         Residential Detached
       </div>
-      <div class="radio-btn">
+      <div class="radio-btn radio-property" (click)="attachselect()" id="attachdiv">
         <div class="radio-bg">
           <div class="radio-dot"></div>
         </div>
@@ -25,29 +25,29 @@
     <div class="detail-container1">
       <div class="detail-item1">
         <span>Total Bedrooms</span>
-        <input type="text" />
+        <input type="text" [(ngModel)] = "total_bedroom_value" (change)="valuechange()"/>
       </div>
       <div class="detail-item1">
         <span>Total Full Baths</span>
-        <input type="text" />
+        <input type="text" [(ngModel)] = "total_bathroom_value" (change)="valuechange()" />
       </div>
       <div class="detail-item1">
         <span>SqFt</span>
-        <input type="text" />
+        <input type="text" [(ngModel)]="sqft_value" (change)="valuechange()"/>
       </div>
       <div class="detail-item1">
         <span>Year Built</span>
-        <input type="text" />
+        <input type="text" [(ngModel)] = "yearbuilt_value" (change)="valuechange()"/>
       </div>
     </div>
     <div class="detail-container2">
       <div class="detail-item2">
         <span>Price</span>
-        <input type="text" />
+        <input type="text" [(ngModel)] = "price_value" (change)="valuechange()"/>
       </div>
       <div class="detail-item2">
         <span>FMLS #</span>
-        <input type="text" />
+        <input type="text" [(ngModel)] = "listsourceid_value" (change)="valuechange()"/>
       </div>
     </div>
   </div>

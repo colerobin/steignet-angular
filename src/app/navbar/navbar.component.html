@@ -1,6 +1,14 @@
 <div id="navbar">
   <a id="inventory" href='/inventory' [ngClass]="calculateClasses('/inventory')">
-    <span>Inventory</span>
+    <div class="inventory-select">
+        <span>Inventory</span>
+    </div>
+    <div class="dropdown">
+      <div class="dropdown-content">
+        <a class="dropdown-item" href="inventory-master">Master</a>
+        <a class="dropdown-item" href="inventory-rental">Rental</a>
+      </div>
+    </div>
   </a>
   <a id="mispricings" href='/mispricing' [ngClass]="calculateClasses('/mispricing')">
     <span>Mispricings</span>

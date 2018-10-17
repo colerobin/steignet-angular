@@ -2,11 +2,18 @@
   <div class="table-module-top">
     <span>{{title}}</span>
     <div class="table-module-action">
-      <div class="date-range-select">
-        <button class="dropbtn">
+     <div class="date-range-select">
+      	<button class="dropbtn">
           <span>Date Range</span>
           <i class="fa fa-angle-down"></i>
         </button>
+        <input 
+        type="text" 
+        mwlFlatpickr 
+        [(ngModel)]="rangeValue" 
+        
+        [convertModelValue]="true"
+        mode="range">
         <div class="dropdown-content">
           <a href="">Last 1 Month</a>
           <a href="">Last 3 Months</a>
@@ -14,24 +21,28 @@
           <a href="">Last 1 Year</a>
           <a href="">Since Inception</a>
         </div>
+       	
       </div>
-      <button id="module-menu"></button>
     </div>
   </div>
-  <table>
-    <tr>
-      <th *ngFor="let headText of data[0]">{{headText}}</th>
-      <th>Total</th>
-    </tr>
-    <tr *ngFor="let line of data.slice(1); index as i">
-      <td>{{line[0]}}</td>
-      <td *ngFor="let item of line.slice(1)">{{formatText(item)}}</td>
-      <td>{{formatText(totalCol[i+1])}}</td>
-    </tr>
-    <tr>
-      <td>Total</td>
-      <td *ngFor="let total of totalRow.slice(1)">{{formatText(total)}}</td>
-      <td>{{formatText(totalSum)}}</td>
-    </tr>
+  <table title="{{title}}">
+    <thead>
+      <tr>
+        <th *ngFor="let headText of data[0]">{{headText}}</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let line of data.slice(1); index as i">
+        <td>{{line[0]}}</td>
+        <td *ngFor="let item of line.slice(1)">{{formatText(item)}}</td>
+        <td>{{formatText(totalCol[i+1])}}</td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td *ngFor="let total of totalRow.slice(1)">{{formatText(total)}}</td>
+        <td>{{formatText(totalSum)}}</td>
+      </tr>
+    </tbody>
   </table>
 </div>

@@ -27,7 +27,10 @@ export class ErrorPageTotalYearComponent implements OnInit {
   yAxisTicks = [100000, 200000, 300000];
   showYAxisLabel = true;
   yAxisLabel = '';
-
+  public rangeValue: { from: Date; to: Date } = {
+    from: new Date(),
+    to: (new Date() as any)['fp_incr'](10)
+  };
   colorScheme = {
     domain: ['#4285F4']
   };

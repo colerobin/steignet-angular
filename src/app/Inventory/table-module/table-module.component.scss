@@ -26,16 +26,14 @@
   .date-range-select {
     margin-right: 10px;
     height: 20px;
-    width: 110px;
-    border: 1px solid #707070;
+    width: auto;  
     button {
-      width: 100%;
       height: 100%;
       padding: 0 7px;
       background: transparent;
       border: none;
       color: white;
-      display: flex;
+      display: inline-flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
@@ -44,6 +42,7 @@
       }
       i {
         font-size: 15px;
+        padding-left: 2px;
       }
     }
     .dropdown-content {
@@ -78,14 +77,17 @@
 
 .table-module table tr {
   background: black;
+
   th {
     padding: 7px 15px;
     text-align: center;
+    height: 42px;
     border: 1px solid #7B7B7B;
   }
   td {
     padding: 7px 15px;
     text-align: center;
+    height: 42px;
     border: 1px solid #7B7B7B;
   }
   th:first-child {
@@ -102,6 +104,6 @@
   }
 }
 
-.table-module table tr:last-child {
+.table-module table tbody tr:last-child {
   background: #3F30F4;
 }

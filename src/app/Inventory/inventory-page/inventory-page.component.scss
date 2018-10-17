@@ -19,3 +19,18 @@
 ul {
   padding-left: 0px;
 }
+
+.tab-selector{
+    color: white;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    span{
+      opacity: 0.7;
+      margin-right: 50px;
+    }
+    span.active{
+      opacity: 1;
+      font-weight: 900;
+    }
+}

@@ -4,13 +4,13 @@ export let inventory_tables = [
     data: [
       ['Status', 'FMLS', 'PHL', 'South FL', 'Craiglist'],
       ['Active Listings', 10000, 90000, 20923, 187000],
-      ['Contingent Due Diligence', 234, 2829, 234, 0],
-      ['Contigent Other', 34, 32903, 234, 0],
-      ['Pending', 3, 20393, 8890, 0],
-      ['Pending Offer Approval', 444, 292930, 96, 0],
-      ['Withdrawn', 22, 3030, 232, 0],
-      ['Sold', 2793, 3030, 4234, 0],
-      ['Expired', 19, 2828929, 23, 0]
+      ['Active Under Contract', 234, 2829, 234, 0],
+      ['Canceled', 34, 32903, 234, 0],
+      ['Closed ', 3, 20393, 8890, 0],
+      ['Expired', 444, 292930, 96, 0],
+      ['Hold', 22, 3030, 232, 0],
+      ['Pending', 2793, 3030, 4234, 0],
+      ['Withdrawn', 19, 2828929, 23, 0]
     ]
   },
   {
@@ -31,13 +31,13 @@ export let inventory_tables = [
     data: [
       ['Status', 'FMLS', 'PHL', 'South FL'],
       ['Active Listings', 10000, 90000, 20923],
-      ['Contingent Due Diligence', 234, 2829, 234],
-      ['Contigent Other', 34, 32903, 234],
-      ['Pending', 3, 20393, 8890],
-      ['Pending Offer Approval', 444, 292930, 96],
-      ['Withdrawn', 22, 3030, 232],
-      ['Sold', 2793, 3030, 4234],
-      ['Expired', 19, 2828929, 23]
+      ['Active Under Contract', 234, 2829, 234],
+      ['Canceled', 34, 32903, 234],
+      ['Closed ', 3, 20393, 8890],
+      ['Expired', 444, 292930, 96],
+      ['Hold', 22, 3030, 232],
+      ['Pending', 2793, 3030, 4234],
+      ['Withdrawn', 19, 2828929, 23]
     ]
   }
 ];

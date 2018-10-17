@@ -1,3 +1,168 @@
-<p>
-  mispricing-table-pie-chart-module works!
-</p>
+<div class="mispricing-pie-table-module">
+  <div class="table-module-top">
+  	<div class = "table-header-left">
+     <button>
+        <span>
+          Surface Level Detection Mispricing
+        </span>
+        <i class="fa fa-angle-down"></i>
+      </button>
+      <button>
+        <span>
+          Geography
+        </span>
+        <i class="fa fa-angle-down"></i>
+      </button>
+    </div>
+    <div class="table-module-action">
+      <div class="date-range-select">
+      	<button class="dropbtn">
+          <span>Date Range</span>
+          <i class="fa fa-angle-down"></i>
+        </button>
+        <input 
+        type="text" 
+        mwlFlatpickr 
+        [(ngModel)]="rangeValue" 
+        
+        [convertModelValue]="true"
+        mode="range">
+        <div class="dropdown-content">
+          <a href="">Last 1 Month</a>
+          <a href="">Last 3 Months</a>
+          <a href="">Last 6 Months</a>
+          <a href="">Last 1 Year</a>
+          <a href="">Since Inception</a>
+        </div>
+       	
+      </div>
+    </div>
+  </div>
+  <div class="table-chart-module">
+	  <table>
+	    <tr>
+	      <th>% Discount</th>
+	      <th>ATL</th>
+	      <th>PHL</th>
+	      <th>South FL</th>
+	      <th>Total</th>
+	    </tr>
+	    <tr>
+	      <td>-5%</td>
+	      <td>{{output[0][0]}}</td>
+	      <td>{{output[1][0]}}</td>
+	      <td>{{output[2][0]}}</td>
+	      <td>{{total[0]}}</td>
+	    </tr>
+	    <tr>
+	      <td>5%-10%</td>
+	      <td>{{output[0][1]}}</td>
+	      <td>{{output[1][1]}}</td>
+	      <td>{{output[2][1]}}</td>
+	      <td>{{total[1]}}</td>
+	    </tr>
+	    <tr>
+	      <td>10%-15%</td>
+	      <td>{{output[0][2]}}</td>
+	      <td>{{output[1][2]}}</td>
+	      <td>{{output[2][2]}}</td>
+	      <td>{{total[2]}}</td>
+	    </tr>
+	    <tr>
+	      <td>15%-20%</td>
+	      <td>{{output[0][3]}}</td>
+	      <td>{{output[1][3]}}</td>
+	      <td>{{output[2][3]}}</td>
+	      <td>{{total[3]}}</td>
+	    </tr>
+	    <tr>
+	      <td>20%-25%</td>
+	      <td>{{output[0][4]}}</td>
+	      <td>{{output[1][4]}}</td>
+	      <td>{{output[2][4]}}</td>
+	      <td>{{total[4]}}</td>
+	    </tr>
+	    <tr>
+	      <td>25%-30%</td>
+	      <td>{{output[0][5]}}</td>
+	      <td>{{output[1][5]}}</td>
+	      <td>{{output[2][5]}}</td>
+	      <td>{{total[5]}}</td>
+	    </tr>
+	    <tr>
+	      <td>30%-</td>
+	      <td>{{output[0][6]}}</td>
+	      <td>{{output[1][6]}}</td>
+	      <td>{{output[2][6]}}</td>
+	      <td>{{total[6]}}</td>
+	    </tr>
+	    <tr>
+	      <td>Total</td>
+	      <td>{{rowtotal[0]}}</td>
+	      <td>{{rowtotal[1]}}</td>
+	      <td>{{rowtotal[2]}}</td>
+	      <td>{{rowtotal[3]}}</td>
+	    </tr>
+	   </table>
+	   <div>
+	   		<span> {{ATLChartData.name}}</span>
+		   <ngx-charts-pie-chart
+		      class="chart-container"
+		      [scheme]="colorScheme"
+		      [view]="view1"
+		      [results]="ATLChartData['data']"
+		      [animations]="animations"
+		      [legend]="noshowLegend"
+		      [legendTitle]="'Hello'"
+		      [explodeSlices]="explodeSlices"
+		      [labels]="showLabels"
+		      [doughnut]="doughnut"
+		      [arcWidth]="arcWidth"
+		      (legendLabelClick)="onLegendLabelClick($event)"
+		      [gradient]="gradient"
+		      (dblclick)="dblclick($event)"
+		      (select)="select($event)">
+		    </ngx-charts-pie-chart>
+		</div>
+		<div>
+			<span> {{PHLChartData.name}}</span>
+		    <ngx-charts-pie-chart
+		      class="chart-container"
+		      [scheme]="colorScheme"
+		      [results]="PHLChartData['data']"
+		      [view]="view1"
+		      [animations]="animations"
+		      [legend]="noshowLegend"
+		      [legendTitle]="legendTitle"
+		      [explodeSlices]="explodeSlices"
+		      [labels]="showLabels"
+		      [doughnut]="doughnut"
+		      [arcWidth]="arcWidth"
+		      (legendLabelClick)="onLegendLabelClick($event)"
+		      [gradient]="gradient"
+		      (dblclick)="dblclick($event)"
+		      (select)="select($event)">
+		    </ngx-charts-pie-chart>
+		</div>
+	    <div>
+	    	<span> {{SouthFLChartData.name}}</span>
+		    <ngx-charts-pie-chart
+		      class="chart-container"
+		      [scheme]="colorScheme"
+		      [results]="SouthFLChartData['data']"
+		      [view]="view"
+		      [animations]="animations"
+		      [legend]="showLegend"
+		      [legendTitle]="legendTitle"
+		      [explodeSlices]="explodeSlices"
+		      [labels]="showLabels"
+		      [doughnut]="doughnut"
+		      [arcWidth]="arcWidth"
+		      (legendLabelClick)="onLegendLabelClick($event)"
+		      [gradient]="gradient"
+		      (dblclick)="dblclick($event)"
+		      (select)="select($event)">
+		    </ngx-charts-pie-chart>
+		</div>
+	</div>
+</div>

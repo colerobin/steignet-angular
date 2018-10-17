@@ -5,21 +5,33 @@
         <span>
           Surface Level Mispricings
         </span>
-        <i class="fa fa-angle-down"></i>
       </button>
-      <button>
+      <button class="source-select">
         <span>
           Source
         </span>
+        <div class = "dropdown-content">
+          <a href="">Zillow</a>
+          <a href="">Redfin</a>
+          <a href="">Corelogic</a>
+          <a href="">All</a>
+        </div>
         <i class="fa fa-angle-down"></i>
       </button>
     </div>
     <div class="table-line-chart-module-action">
-      <div class="date-range-select">
-        <button class="dropbtn">
+     <div class="date-range-select">
+      	<button class="dropbtn">
           <span>Date Range</span>
           <i class="fa fa-angle-down"></i>
         </button>
+        <input 
+        type="text" 
+        mwlFlatpickr 
+        [(ngModel)]="rangeValue" 
+        
+        [convertModelValue]="true"
+        mode="range">
         <div class="dropdown-content">
           <a href="">Last 1 Month</a>
           <a href="">Last 3 Months</a>
@@ -27,8 +39,8 @@
           <a href="">Last 1 Year</a>
           <a href="">Since Inception</a>
         </div>
+       	
       </div>
-      <button id="module-menu"></button>
     </div>
   </div>
   <div class="module-content">

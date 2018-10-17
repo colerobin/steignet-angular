@@ -28,7 +28,10 @@ export class LineChartModuleComponent implements OnInit {
   showGridLines = true;
   curve: any = shape.curveLinear;
   roundDomains = false;
-
+  public rangeValue: { from: Date; to: Date } = {
+    from: new Date(),
+    to: (new Date() as any)['fp_incr'](10)
+  };
   constructor() { }
 
   ngOnInit() {

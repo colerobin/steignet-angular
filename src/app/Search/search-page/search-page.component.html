@@ -1,21 +1,24 @@
 <div *ngIf="!showResult" class="row">
   <div class="col-md-4">
     <div class="module-container">
-      <app-property-search-module></app-property-search-module>
+      <!-- <app-property-search-module (property_type)="property_type($event)" (total_bedroom)="total_bedroom($event)" (total_bathroom)="total_bathroom($event)" (sqft)="sqft($event)" (yearbuilt)="yearbuilt($event)" (price)="price" (listsourceid)="listsourceid"></app-property-search-module> -->
+      <app-property-search-module (property_result)="property_result($event)"></app-property-search-module>
+
     </div>
-    <app-remarks-search-module></app-remarks-search-module>
+    <app-remarks-search-module (remark_result)="remark_result($event)"></app-remarks-search-module>
   </div>
   <div class="col-md-4">
-    <app-location-search-module></app-location-search-module>
+    <app-location-search-module (location_result)="location_result($event)"></app-location-search-module>
   </div>
   <div class="col-md-4">
-    <app-status-search-module></app-status-search-module>
-    <button class="search-button">Search</button>
+    <app-status-search-module  (status_result)="status_result($event)"></app-status-search-module>
+
+    <button class="search-button" (click)="searchResult()">Search</button>
   </div>
 </div>
 
 <div *ngIf="showResult" class="row">
   <div class="col">
-    <app-show-results-module></app-show-results-module>
+    <app-show-results-module [results]="return_result"></app-show-results-module>
   </div>
 </div>

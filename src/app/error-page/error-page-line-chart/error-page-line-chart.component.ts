@@ -28,7 +28,10 @@ export class ErrorPageLineChartComponent implements OnInit {
   xAxisTicks = [];
   showYAxisLabel = true;
   yAxisLabel = '';
-
+  public rangeValue: { from: Date; to: Date } = {
+    from: new Date(),
+    to: (new Date() as any)['fp_incr'](10)
+  };
   colorScheme = {
     domain: ['#4285F4', '#DB4437', '#F4B400', '#0F9D58', '#FF6D00', '#46BDC6']
   };

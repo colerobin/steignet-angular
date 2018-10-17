@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-
+import { Component, OnInit, Input, Renderer} from '@angular/core';
+declare var $: any;
 @Component({
   selector: 'app-table-module',
   templateUrl: './table-module.component.html',
@@ -14,10 +14,18 @@ export class TableModuleComponent implements OnInit {
   totalRow: any[];
   totalCol: any[];
   totalSum: number = 0;
-
-  constructor() { }
+  public start;
+  public pressed;
+  public startX;
+  public startWidth;
+  public rangeValue: { from: Date; to: Date } = {
+    from: new Date(),
+    to: (new Date() as any)['fp_incr'](10)
+  };
+  constructor(public renderer: Renderer) { }
 
   ngOnInit() {
+
     this.tableLength = this.data[0].length;
     this.totalCol = new Array(this.data.length - 1);
     this.totalRow = new Array(this.tableLength).fill(0);
@@ -31,6 +39,17 @@ export class TableModuleComponent implements OnInit {
       this.totalCol[i] = temp;
       this.totalSum += temp;
     }
+
+    $('tr').each(function(){
+      if($(this).parent().parent().attr('title') == "AVM Inventory Checker"){
+        if(parseInt($('td', $(this)).eq(1).html()) > parseInt($('td', $(this)).eq(2).html())){
+          $('td', $(this)).eq(2).css('color','red');
+        }
+        if(parseInt($('td', $(this)).eq(1).html()) > parseInt($('td', $(this)).eq(3).html())){
+          $('td', $(this)).eq(3).css('color','red');
+        }
+      }
+    });
   }
 
   formatText(val) {
@@ -39,5 +58,5 @@ export class TableModuleComponent implements OnInit {
     }
     return Number(val).toLocaleString('en-GB');
   }
-
+  
 }

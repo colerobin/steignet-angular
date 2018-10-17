@@ -5,6 +5,11 @@ import { AlertService, AuthenticationService } from '../_services';
 
 import { Globals } from '../globals';
 
+import {
+    AuthService,
+    GoogleLoginProvider
+} from 'angular-6-social-login';
+
 declare var $: any;
 
 
@@ -25,7 +30,8 @@ export class LoginPageComponent implements OnInit {
   		        private route: ActivatedRoute,
   		        private router: Router,
               private authenticationService: AuthenticationService,
-              private alertService: AlertService) { 
+              private alertService: AlertService,
+              private socialAuthService: AuthService) { 
     this.backend_url = globals.backend_url;
   }
 
@@ -35,7 +41,24 @@ export class LoginPageComponent implements OnInit {
   	this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  onSubmit(username, password, googleauth) {
+  public socialSignIn(socialPlatform : string) {
+    let socialPlatformProvider;
+    if(socialPlatform == "google"){
+      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    } 
+    
+    this.socialAuthService.signIn(socialPlatformProvider).then(
+      (userData) => {
+        console.log(socialPlatform+" sign in data : " , userData);
+        // Now sign-in with userData
+        // ...
+            
+      }
+    );
+  }
+  
+
+  onSubmit(username, password) {
 
     $.ajax({
       url: this.backend_url+'/login',

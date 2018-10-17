@@ -24,7 +24,10 @@ export class TableLineChartModuleComponent implements OnInit {
   barPadding: number = 2;
   groupPadding: number = 8;
   yScaleMax = 250;
-
+  public rangeValue: { from: Date; to: Date } = {
+    from: new Date(),
+    to: (new Date() as any)['fp_incr'](10)
+  };
   constructor() { }
 
   ngOnInit() {

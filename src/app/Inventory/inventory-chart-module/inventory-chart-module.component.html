@@ -3,17 +3,26 @@
     <span>{{title}}</span>
     <div class="chart-module-action">
       <div class="date-range-select">
-        <button class="dropbtn">
-          <span>Option</span>
+      	<button class="dropbtn">
+          <span>Date Range</span>
           <i class="fa fa-angle-down"></i>
         </button>
+        <input 
+        type="text" 
+        mwlFlatpickr 
+        [(ngModel)]="rangeValue" 
+        
+        [convertModelValue]="true"
+        mode="range">
         <div class="dropdown-content">
-          <a href="">Option 1</a>
-          <a href="">Option 2</a>
-          <a href="">Option 3</a>
+          <a href="">Last 1 Month</a>
+          <a href="">Last 3 Months</a>
+          <a href="">Last 6 Months</a>
+          <a href="">Last 1 Year</a>
+          <a href="">Since Inception</a>
         </div>
+       	
       </div>
-      <button id="module-menu"></button>
     </div>
   </div>
 

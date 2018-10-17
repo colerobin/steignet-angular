@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Renderer } from '@angular/core';
+declare var $: any;
 
 @Component({
   selector: 'app-mispricing-table-module1',
@@ -11,7 +12,10 @@ export class MispricingTableModule1Component implements OnInit {
   @Input() data: any[];
 
   total = 307923;
-
+  public rangeValue: { from: Date; to: Date } = {
+    from: new Date(),
+    to: (new Date() as any)['fp_incr'](10)
+  };
   constructor() { }
 
   ngOnInit() {

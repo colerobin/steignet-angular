@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Globals } from '../globals';
+
+declare var $: any;
 
 @Component({
   selector: 'app-topbar',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopbarComponent implements OnInit {
 
-  constructor() { }
+  private backend_url: string;
+
+  constructor(private globals: Globals) { 
+    this.backend_url = globals.backend_url;
+  }
+
 
   ngOnInit() {
   }
-
+  passthrough_link(){
+  	$.ajax({
+      url: this.backend_url+'/api/passthrough',
+      method: 'get',
+      success: function(url){
+      	window.location.href = url;
+      }
+  	});
+  }
 }

@@ -9,11 +9,18 @@
       </button>
     </div>
     <div class="table-line-chart-module-action">
-      <div class="date-range-select">
-        <button class="dropbtn">
+     <div class="date-range-select">
+      	<button class="dropbtn">
           <span>Date Range</span>
           <i class="fa fa-angle-down"></i>
         </button>
+        <input 
+        type="text" 
+        mwlFlatpickr 
+        [(ngModel)]="rangeValue" 
+        
+        [convertModelValue]="true"
+        mode="range">
         <div class="dropdown-content">
           <a href="">Last 1 Month</a>
           <a href="">Last 3 Months</a>
@@ -21,8 +28,8 @@
           <a href="">Last 1 Year</a>
           <a href="">Since Inception</a>
         </div>
+       	
       </div>
-      <button id="module-menu"></button>
     </div>
   </div>
   <div class="module-content">
@@ -31,7 +38,6 @@
         <span class="errorpage-unit-title">{{chart_title}}</span>
         <ngx-charts-bar-vertical-normalized
           class="chart-container"
-          [view]="view"
           [scheme]="colorScheme"
           [results]="chart_data"
           [gradient]="gradient"

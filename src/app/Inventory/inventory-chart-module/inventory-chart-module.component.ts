@@ -16,13 +16,16 @@ export class InventoryChartModuleComponent implements OnInit {
   legendTitle = '';
   gradient = false;
   tooltipDisabled = true;
-
-  //pie
+  view: any[] = [500, 500];
+  //pie  
   showLabels = false;
   explodeSlices = false;
   doughnut = true;
   arcWidth = 0.2;
-
+  public rangeValue: { from: Date; to: Date } = {
+    from: new Date(),
+    to: (new Date() as any)['fp_incr'](10)
+  };
   constructor() { }
 
   ngOnInit() {

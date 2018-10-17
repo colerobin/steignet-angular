@@ -51,6 +51,21 @@ export class InventoryPageComponent implements OnInit {
     })
     $("#sortablea").sortable();
     $("#sortableb").sortable();
+    $(document).ready(function(){
+      $('#master_div_btn').click(function(){
+        $('.master-div').show();
+        $('.rental-div').hide();
+        $('.tab-selector span').removeClass('active');
+        $(this).addClass('active')
+      });
+      $('#rental_div_btn').click(function(){
+        $('.master-div').hide();
+        $('.rental-div').show();
+        $('.tab-selector span').removeClass('active');
+        $(this).addClass('active')
+      });
+    });
   }
+
 
 }

@@ -1,5 +1,7 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ // you may need to adjust the css import depending on your build tool
 import { NgModule } from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { enableProdMode } from '@angular/core';
@@ -43,11 +45,30 @@ import { AuthGuard } from './_guards';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AlertService, AuthenticationService, UserService } from './_services';
 import { AlertComponent } from './_directives';
-
 import { Globals } from './globals';
+import { FormsModule } from '@angular/forms'; 
+import {
+    SocialLoginModule,
+    AuthServiceConfig,
+    GoogleLoginProvider,
+} from "angular-6-social-login";
+
+import { FlatpickrModule } from 'angularx-flatpickr';
 
 
 enableProdMode();
+
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("133938672424-8h78nudjp1g64pncjt8k7j6gok10e24g.apps.googleusercontent.com")
+        }
+      ]
+  );
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -79,14 +100,17 @@ enableProdMode();
     ErrorErrorPageComponent,
     ErrorMLSPageComponent,
     LoginPageComponent,
-    AlertComponent
+    AlertComponent    
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
     NgxChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    SocialLoginModule,
+    FormsModule,
+    FlatpickrModule.forRoot(),
   ],
   providers: [
     AuthGuard,
@@ -94,7 +118,11 @@ enableProdMode();
     AuthenticationService,
     Globals,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    {
+        provide: AuthServiceConfig,
+        useFactory: getAuthServiceConfigs
+    }
   ],
   bootstrap: [
     AppComponent

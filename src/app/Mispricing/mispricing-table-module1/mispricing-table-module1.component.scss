@@ -26,16 +26,14 @@
   .date-range-select {
     margin-right: 10px;
     height: 20px;
-    width: 110px;
-    border: 1px solid #707070;
+    width: auto;  
     button {
-      width: 100%;
       height: 100%;
       padding: 0 7px;
       background: transparent;
       border: none;
       color: white;
-      display: flex;
+      display: inline-flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
@@ -44,6 +42,7 @@
       }
       i {
         font-size: 15px;
+        padding-left: 2px;
       }
     }
     .dropdown-content {
@@ -82,9 +81,7 @@
     border-top: 1px solid #1F1F1F;
     height: 30px;
   }
-  .divider {
-    border-top: 1px solid #707070;
-  }
+  
   th,
   td {
     text-align: center;
@@ -93,9 +90,31 @@
   th:first-child,
   td:first-child {
     text-align: left;
-    padding-left: 15px;
+    padding-left: 25px;
   }
-  .divider td:nth-child(2) {
+  .divider.ng-star-inserted td{
     background: #408DF5;
   }
+  .divider {
+    border-top: 1px solid #707070;
+    th:first-child,
+    td:first-child{
+      padding-left: 15px;
+    }
+  }
+}
+thead tr th {
+  position: relative;
+}
+span.ui-column-resizer {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  width: 8px;
+  height: 100%;
+  padding: 0;
+  cursor: col-resize;
+  border: 1px solid transparent;
 }

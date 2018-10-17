@@ -33,16 +33,14 @@
   .date-range-select {
     margin-right: 10px;
     height: 20px;
-    width: 110px;
-    border: 1px solid #707070;
+    width: auto;  
     button {
-      width: 100%;
       height: 100%;
       padding: 0 7px;
       background: transparent;
       border: none;
       color: white;
-      display: flex;
+      display: inline-flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
@@ -51,6 +49,7 @@
       }
       i {
         font-size: 15px;
+        padding-left: 2px;
       }
     }
     .dropdown-content {
@@ -84,12 +83,82 @@
 }
 
 table {
+  thead tr th{
+    position: relative;
+  }
+  thead tr th:after{
+    content: "\2193";
+    position: absolute;
+    right: 0.5em;
+    opacity: 0.3;
+    color: red;
+    bottom: 0.2em;
+    font-size: 15px;
+    font-weight: 900;
+  }
+  thead tr th:before{
+    content: "\2191";
+    position: absolute;
+    right: 1em;
+    opacity: 0.3;
+    color: #00c300;
+    bottom: 0.2em;
+    font-size: 15px;
+    font-weight: 900;
+  }
+
+  thead tr th.showafter:after{
+    opacity: 1;
+  }
+  thead tr th.showbefore:before{
+    opacity: 1;
+  }
+  th:nth-child(1) span.ui-column-resizer,
+  th:nth-child(3) span.ui-column-resizer,
+  th:nth-child(6) span.ui-column-resizer,
+  th:nth-child(10) span.ui-column-resizer,
+  th:nth-child(11) span.ui-column-resizer,
+  th:nth-child(12) span.ui-column-resizer,
+  th:nth-child(13) span.ui-column-resizer {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 8px;
+    height: 100%;
+    padding: 0;
+    cursor: col-resize;
+    border: 1px solid transparent;
+  }
+
   tr {
     border-top: 1px solid #707070;
     height: 30px;
     th,
     td {
       text-align: center;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      
+      z-index: 1;
+      margin-left: -2px;
+      margin-top: 2px;
+      a {
+        display: block;
+        width: 133px;
+        height: 30px;
+        padding-left: 7px;
+        border: 1px solid #707070;
+        background: #444;
+        color: white;
+        text-decoration: unset;
+      }
+      i {
+        padding-left: 2px;
+      }
     }
   }
 }
@@ -98,13 +167,32 @@ th:nth-child(1),
 th:nth-child(3),
 th:nth-child(6),
 th:nth-child(10),
+th:nth-child(11),
+th:nth-child(12),
 th:nth-child(13),
 td:nth-child(1),
 td:nth-child(3),
 td:nth-child(6),
 td:nth-child(10),
+td:nth-child(11),
+td:nth-child(12),
 td:nth-child(13) {
   border-right: 1px solid #707070;
+}
+
+.font_red{
+  color: #ff4b4b;
+}
+.font_green{
+  color: #18fd21;
+}
+.font_purple{
+  color: #5569ff;
+}
+
+.msl_id:hover{
+  cursor: pointer;
+  color: #8adaff;
 }
 
 td:nth-child(2) {
@@ -115,4 +203,7 @@ td:nth-child(2) {
 .property-table th,
 .property-table td {
   border-right: 1px solid #707070 !important;
+}
+.up-down-arrow{
+ display: none; 
 }

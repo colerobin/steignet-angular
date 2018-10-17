@@ -1,0 +1,233 @@
+.mispricing-pie-table-module {
+  width: 100%;
+  border: 1px solid white;
+  color: white;
+  font-size: 12px;
+  margin-bottom: 20px;
+  overflow: -webkit-paged-x;
+}
+.table-header-left {
+  display: inline;
+}
+.table-header-left i {
+  font-size: 17px;
+}
+
+.table-header-left button {
+  font-size: 15px;
+  color: white;
+  border: none;
+  background: transparent;
+  margin-right: 5px;
+  span {
+    margin-left: 5px;
+  }
+}
+
+
+.table-module-top {
+  width: 100%;
+  height: 35px;
+  padding: 7px 10px 7px 15px;
+  background: linear-gradient(to left, #193046, #2F345A);
+  span {
+    font-size: 15px;
+  }
+}
+
+.chart-module-action {
+  float: right;
+  height: 20px;
+  display: flex;
+  .date-range-select {
+    margin-right: 10px;
+    height: 20px;
+    width: auto;  
+    button {
+      height: 100%;
+      padding: 0 7px;
+      background: transparent;
+      border: none;
+      color: white;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      span {
+        font-size: 11px;
+      }
+      i {
+        font-size: 15px;
+        padding-left: 2px;
+      }
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      border: 1px solid #707070;
+      z-index: 1;
+      a {
+        display: block;
+        width: 108px;
+        height: 20px;
+        padding-left: 7px;
+        border-bottom: 1px solid #707070;
+        background: #193046;
+        color: white;
+        text-decoration: unset;
+      }
+    }
+  }
+  .date-range-select:hover .dropdown-content {
+    display: block;
+  }
+  #module-menu {
+    height: 20px;
+    width: 27px;
+    background: url(../../../assets/images/module_menu.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+  }
+}
+
+.table-module {
+  width: 100%;
+  border: 1px solid #7B7B7B;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 12px;
+  table {
+    width: 100%;
+  }
+}
+
+.table-module-top {
+  width: 100%;
+  height: 35px;
+  padding: 7px 10px 7px 15px;
+  background: linear-gradient(to left, #193046, #2F345A);
+  span {
+    font-size: 15px;
+  }
+}
+
+.table-module-action {
+  float: right;
+  height: 20px;
+  display: flex;
+  .date-range-select {
+    margin-right: 10px;
+    height: 20px;
+    width: auto;  
+    button {
+      height: 100%;
+      padding: 0 7px;
+      background: transparent;
+      border: none;
+      color: white;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      span {
+        font-size: 11px;
+      }
+      i {
+        font-size: 15px;
+        padding-left: 2px;
+      }
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      border: 1px solid #707070;
+      z-index: 1;
+      a {
+        display: block;
+        width: 108px;
+        height: 20px;
+        padding-left: 7px;
+        border-bottom: 1px solid #707070;
+        background: #193046;
+        color: white;
+        text-decoration: unset;
+      }
+    }
+  }
+  .date-range-select:hover .dropdown-content {
+    display: block;
+  }
+  #module-menu {
+    height: 20px;
+    width: 27px;
+    background: url(../../../assets/images/module_menu.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+  }
+}
+
+.mispricing-pie-table-module table tr {
+  background: black;
+  th {
+    padding: 7px 15px;
+    text-align: center;
+    height: 35px;
+    border: 1px solid #7B7B7B;
+  }
+  td {
+    padding: 7px 15px;
+    text-align: center;
+    height: 35px;
+    border: 1px solid #7B7B7B;
+  }
+  th:first-child {
+    text-align: left;
+  }
+  td:first-child {
+    text-align: left;
+  }
+  th:last-child {
+    background: #3F30F4;
+  }
+  td:last-child {
+    background: #3F30F4;
+  }
+}
+
+.mispricing-pie-table-module table tr:last-child {
+  background: #3F30F4;
+}
+.table-chart-module{
+  table{
+    float: left;
+  }
+  div{
+    float: left;
+    margin-left: 50px;
+    position: relative;
+  }
+  div:nth-child(2),
+  div:nth-child(3){
+
+    margin-top: 25px;
+    span {
+      position: absolute;
+      font-size: 40px;
+      top: 100px;
+      left: 85px;
+    }
+  }
+  div:nth-child(4){
+    span{
+      position: absolute;
+      font-size: 40px;
+      top: 120px;
+      left: 55px;
+    }
+  }
+  .chart-legend{
+    margin-top: 50px;
+  }
+}

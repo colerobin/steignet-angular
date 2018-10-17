@@ -9,6 +9,13 @@
           <span>Date Range</span>
           <i class="fa fa-angle-down"></i>
         </button>
+        <input 
+        type="text" 
+        mwlFlatpickr 
+        [(ngModel)]="rangeValue" 
+        
+        [convertModelValue]="true"
+        mode="range">
         <div class="dropdown-content">
           <a href="">Last 1 Month</a>
           <a href="">Last 3 Months</a>
@@ -16,282 +23,93 @@
           <a href="">Last 1 Year</a>
           <a href="">Since Inception</a>
         </div>
+        
       </div>
-      <button id="module-menu"></button>
     </div>
   </div>
-  <table class="financial-table" *ngIf="tab == 1">
-    <tr>
-      <th>MLS ID</th>
-      <th>Status</th>
-      <th>Property</th>
-      <th>Original Price</th>
-      <th>Prev Price</th>
-      <th>Ask Price</th>
-      <th>$ Change</th>
-      <th>$ Change OLP</th>
-      <th>% Change</th>
-      <th>% Change OLP</th>
-      <th>Zestimate</th>
-      <th>Redfin</th>
-      <th>Average</th>
-      <th>AVM Delta Premium</th>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td>A</td>
-      <td>Realm</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>7%</td>
-      <td>7%</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td>A</td>
-      <td>Realm</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>7%</td>
-      <td>7%</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td>A</td>
-      <td>Realm</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>7%</td>
-      <td>7%</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td>A</td>
-      <td>Realm</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>7%</td>
-      <td>7%</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td>A</td>
-      <td>Realm</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>7%</td>
-      <td>7%</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td>A</td>
-      <td>Realm</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>7%</td>
-      <td>7%</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td>A</td>
-      <td>Realm</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>7%</td>
-      <td>7%</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td>A</td>
-      <td>Realm</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>7%</td>
-      <td>7%</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-      <td>$100,000</td>
-    </tr>
+  <table  rz-table="" class="glowTableBody financial-table" *ngIf="tab == 1">
+    <thead>
+      <tr>
+        <th (click) = "sorts('ListingSourceID', $event)" ><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>MLS ID</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Status</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Property</th>
+        <th (click) = "sorts('OriginalListPrice', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Original Price</th>
+        <th (click) = "sorts('PreviousListPrice', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Prev Price</th>
+        <th (click) = "sorts('sample', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Ask Price</th>
+        <th (click) = "sorts('sample', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>$ Change</th>
+        <th (click) = "sorts('sample', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span> Change OLP</th>
+        <th (click) = "sorts('sample', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>% Change</th>
+        <th (click) = "sorts('sample', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>% Change OLP</th>
+        <th (click) = "sorts('sample', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Zestimate</th>
+        <th (click) = "sorts('sample', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Redfin</th>
+        <th (click) = "sorts('sample', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Average</th>
+        <th (click) = "sorts('sample', $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>AVM Delta Premium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let result of results">
+        <td>
+          <span class="msl_id">{{result.ListingSourceID}}</span>
+          <div class="dropdown-content">
+            <a class="dropdown-item" href="#">Send to Construction <i class="fa fa-random goto_con_icon"></i>  </a>
+          </div>
+        </td>
+        <td>A</td>
+        <td>Realm</td>
+        <td>${{result.OriginalListPrice}}</td>
+        <td>${{result.PreviousListPrice || 0}}</td>
+        <td class="font_green">${{result.ListPriceLow || 0}}</td>
+        <!-- <td class="font_green">${{(parseInt(result.ListPriceLow)?parseInt(result.ListPriceLow):0) - (parseInt(result.PreviousListPrice)?parseInt(result.PreviousListPrice):0)}}</td>
+        <td class="font_green">${{(parseInt(result.ListPriceLow)?parseInt(result.ListPriceLow):0) - (parseInt(result.OriginalListPrice)?parseInt(result.OriginalListPrice):0)}}</td>
+        <td class="font_green">{{(parseInt(result.ListPriceLow)?parseInt(result.ListPriceLow):0)/(parseInt(result.PreviousListPrice)?parseInt(result.PreviousListPrice):0)}}%</td>
+        <td class="font_green">{{(parseInt(result.ListPriceLow)?parseInt(result.ListPriceLow):0)/(parseInt(result.OriginalListPrice)?parseInt(result.OriginalListPrice):0)}}%</td> -->
+        <td class="font_green">${{result.ListPriceLow || 0}}</td>
+        <td class="font_green">${{result.ListPriceLow || 0}}</td>
+        <td class="font_green">${{result.ListPriceLow || 0}}</td>
+        <td class="font_green">${{result.ListPriceLow || 0}}</td>
+        <td>$100,000</td>
+        <td>$100,000</td>
+        <td>$100,000</td>
+        <td class="font_green">$100,000</td>
+      </tr>
+    </tbody>
   </table>
-  <table class="property-table" *ngIf="tab == 2">
-    <tr>
-      <th>MLS ID</th>
-      <th>Status</th>
-      <th>Property</th>
-      <th>Address</th>
-      <th>Unit</th>
-      <th>Neighborhood</th>
-      <th>Year Built</th>
-      <th># of Bdrm</th>
-      <th># of Baths</th>
-      <th>Sq Ft</th>
-      <th>$/Sqft List</th>
-      <th>Tax ID</th>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>2345222</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+  <table rz-table="" class="glowTableBody property-table" *ngIf="tab == 2">
+    <thead>
+      <tr>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span> MLS ID</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Status</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Property</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Address</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Unit</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Neighborhood</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Year Built</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span># of Bdrm</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span># of Baths</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Sq Ft</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>$/Sqft List</th>
+        <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Tax ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td> <span class="msl_id">{{result.ListingSourceID}}</span>
+          <div class="dropdown-content">
+            <a class="dropdown-item" href="#">Send to Construction <i class="fa fa-random goto_con_icon"></i> </a>
+          </div>
+        </td>
+        <td>{{result.P}}</td>
+        <td></td>
+        <td></td>
+        <td>{{result.UnparsedAddress}}</td>
+        <td></td>
+        <td>{{result.Created_DT}}</td>
+        <td>{{result.BedroomsTotal}}</td>
+        <td><{{result.BathroomsFull}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
   </table>
 </div>

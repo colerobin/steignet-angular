@@ -6,16 +6,23 @@
       </div>
     </li>
     <li class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-12 setheightdiv">
         <app-line-chart-module [data]="lineChartData"></app-line-chart-module>
       </div>
     </li>
     <li class="row">
-      <div class="col-xl-6">
+      <div class="col-sm-12">
         <app-mispricing-table-module1 [title]="'Mispricing as a % of Inventory'"></app-mispricing-table-module1>
       </div>
-      <div class="col-xl-6">
+    </li>
+    <li class="row">
+      <div class="col-sm-12">
         <app-mispricing-table-module2></app-mispricing-table-module2>
+      </div>
+    </li>
+    <li class="row">
+      <div class="col-sm-12">
+        <app-mispricing-table-pie-chart-module [title]="'Surface Level Detection Mispricing'"></app-mispricing-table-pie-chart-module>
       </div>
     </li>
   </ul>

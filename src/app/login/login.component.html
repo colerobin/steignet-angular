@@ -10,11 +10,14 @@
       <div class="input-password loginform-item">
         <input type="password" name="password" placeholder="Password" #password>
       </div>
-      <div class="input-googleauth loginform-item">
-        <input type="text" name="googleauth" placeholder="Google Auth" #googleauth>
+      <div class="input-googleauth loginform-item button-submit">
+        
+        <input type = "button" value="Google" id="googleBtn" (click)="socialSignIn('google')">
+
+
       </div>
       <div class="button-submit loginform-item">
-        <input type="button" name="submit" value="Submit" (click)="onSubmit(username.value, password.value, googleauth.value)">
+        <input type="button" name="submit" value="Submit" (click)="onSubmit(username.value, password.value)">
       </div>
     </div>
   </div>

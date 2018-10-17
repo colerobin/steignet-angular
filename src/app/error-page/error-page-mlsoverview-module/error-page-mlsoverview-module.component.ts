@@ -27,7 +27,10 @@ export class ErrorPageMLSOverviewComponent implements OnInit {
   yAxisLabel = '';
   yAxisTicks: any[] = [0, 25, 50, 75, 100];
 
-
+  public rangeValue: { from: Date; to: Date } = {
+    from: new Date(),
+    to: (new Date() as any)['fp_incr'](10)
+  };
   colorScheme = {
     domain: ['#CD900A', '#2FCBD5', '#0E5EFD', '#AAAAAA']
   };

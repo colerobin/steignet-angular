@@ -9,10 +9,10 @@
     <div class="module-input-label">
       Public Remarks-Consuver View:
     </div>
-    <input id="public-input" type="text" />
+    <input id="public-input" type="text" [(ngModel)] = "public_remark_value" (change)="valuechange()"/>
     <div class="module-input-label">
       Private Remarks-Members Only:
     </div>
-    <input id="private-input" type="text" />
+    <input id="private-input" type="text" [(ngModel)] = "private_remark_value" (change)="valuechange()"/>
   </div>
 </div>

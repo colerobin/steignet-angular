@@ -5,6 +5,9 @@
 #error-summary {
 	position: relative;
 }
+#inventory {
+  position: relative;
+}
 
 .error-summary-select {
   button {
@@ -17,6 +20,18 @@
     align-items: center;
     cursor: pointer;
   }
+}
+.inventory-select {
+  button {
+    width: 100%;
+    height: 100%;
+    padding: 0 7px;
+    background: transparent;
+    border: none;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  } 
 }
 .dropdown {
   display: none;
@@ -43,7 +58,9 @@
 #error-summary:hover .dropdown {
   display: block;
 }
-
+#inventory:hover .dropdown{
+  display: block;
+}
 .dropdown-item:hover {
   border-bottom: 1px solid #FFFFFF;
 }
