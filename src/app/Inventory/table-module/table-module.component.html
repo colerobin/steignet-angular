@@ -7,13 +7,7 @@
           <span>Date Range</span>
           <i class="fa fa-angle-down"></i>
         </button>
-        <input 
-        type="text" 
-        mwlFlatpickr 
-        [(ngModel)]="rangeValue" 
-        
-        [convertModelValue]="true"
-        mode="range">
+       
         <div class="dropdown-content">
           <a href="">Last 1 Month</a>
           <a href="">Last 3 Months</a>
@@ -23,6 +17,13 @@
         </div>
        	
       </div>
+       <input 
+        type="text" 
+        mwlFlatpickr 
+        [(ngModel)]="rangeValue" 
+        
+        [convertModelValue]="true"
+        mode="range">
     </div>
   </div>
   <table title="{{title}}">

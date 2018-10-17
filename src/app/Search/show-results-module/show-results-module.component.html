@@ -5,17 +5,11 @@
     <span [ngClass]="{'tab-btn': true, 'tab-active': !showFinancial()}" (click)="showTab(2)">Property Details</span>
     <div class="table-module-action">
       <div class="date-range-select">
-        <button class="dropbtn">
+      	<button class="dropbtn">
           <span>Date Range</span>
           <i class="fa fa-angle-down"></i>
         </button>
-        <input 
-        type="text" 
-        mwlFlatpickr 
-        [(ngModel)]="rangeValue" 
-        
-        [convertModelValue]="true"
-        mode="range">
+       
         <div class="dropdown-content">
           <a href="">Last 1 Month</a>
           <a href="">Last 3 Months</a>
@@ -23,8 +17,15 @@
           <a href="">Last 1 Year</a>
           <a href="">Since Inception</a>
         </div>
-        
+       	
       </div>
+       <input 
+        type="text" 
+        mwlFlatpickr 
+        [(ngModel)]="rangeValue" 
+        
+        [convertModelValue]="true"
+        mode="range">
     </div>
   </div>
   <table  rz-table="" class="glowTableBody financial-table" *ngIf="tab == 1">
