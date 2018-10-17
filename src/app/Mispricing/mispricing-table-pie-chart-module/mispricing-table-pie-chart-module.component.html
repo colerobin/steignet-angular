@@ -40,13 +40,15 @@
   </div>
   <div class="table-chart-module">
 	<table>
-	    <tr>
-	      <th>% Discount</th>
-	      <th>ATL</th>
-	      <th>PHL</th>
-	      <th>South FL</th>
-	      <th>Total</th>
-	    </tr>
+		<thead>
+		    <tr>
+		      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>% Discount</th>
+		      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>ATL</th>
+		      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>PHL</th>
+		      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>South FL</th>
+		      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Total</th>
+		    </tr>
+		</thead>
 	    <tr>
 	      <td>-5%</td>
 	      <td>{{output[0][0]}}</td>

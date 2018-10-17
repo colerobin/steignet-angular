@@ -79,6 +79,7 @@
   background: black;
 
   th {
+    position: relative;
     padding: 7px 15px;
     text-align: center;
     height: 42px;
@@ -106,4 +107,17 @@
 
 .table-module table tbody tr:last-child {
   background: #3F30F4;
+}
+
+span.ui-column-resizer {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  width: 8px;
+  height: 100%;
+  padding: 0;
+  cursor: col-resize;
+  border: 1px solid transparent;
 }

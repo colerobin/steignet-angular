@@ -81,7 +81,9 @@
     border-top: 1px solid #1F1F1F;
     height: 30px;
   }
-  
+  th{
+    position: relative;
+  }
   th,
   td {
     text-align: center;
@@ -106,6 +108,19 @@
 thead tr th {
   position: relative;
 }
+span.ui-column-resizer {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  width: 8px;
+  height: 100%;
+  padding: 0;
+  cursor: col-resize;
+  border: 1px solid transparent;
+}
+
 span.ui-column-resizer {
   display: block;
   position: absolute;

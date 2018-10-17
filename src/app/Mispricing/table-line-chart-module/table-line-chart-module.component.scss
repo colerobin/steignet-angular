@@ -137,6 +137,7 @@
     padding: 7px 15px;
     text-align: center;
     border: 1px solid #7B7B7B;
+    position: relative;
   }
   td {
     padding: 7px 15px;
@@ -159,4 +160,17 @@
 
 .table-line-chart-module table tr:last-child {
   background: #408DF5;
+}
+
+span.ui-column-resizer {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  width: 8px;
+  height: 100%;
+  padding: 0;
+  cursor: col-resize;
+  border: 1px solid transparent;
 }

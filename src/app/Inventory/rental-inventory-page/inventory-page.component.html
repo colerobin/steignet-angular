@@ -14,22 +14,6 @@
   	</ul>
   </div>
 </div>
-<div class="row rental-div">
-  <div class="col-sm-7" *ngIf="isLoaded">
-    <ul id="sortablea">
-      <li *ngFor="let table of rental_inventory_tables">
-        <app-table-module [title]="table.name" [data]="table.data"></app-table-module>
-      </li>
-    </ul>
-  </div>
-  <div class="col-sm-5">
-    <ul id="sortableb">
-      <li *ngFor="let chart of inventory_charts">
-        <app-inventory-chart-module [title]="chart.name" [data]="chart.data"></app-inventory-chart-module>
-      </li>
-    </ul>
-  </div>
-</div>
 <div class="add-btn-container">
   <button class="add-module-btn">
     <i class="fa fa-plus"></i>

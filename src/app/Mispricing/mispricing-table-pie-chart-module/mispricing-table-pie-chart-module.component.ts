@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Renderer} from '@angular/core';
+declare var $: any;
 @Component({
   selector: 'app-mispricing-table-pie-chart-module',
   templateUrl: './mispricing-table-pie-chart-module.component.html',
@@ -14,6 +15,10 @@ export class MispricingTablePieChartModuleComponent implements OnInit {
   public PHLChartData;
   public SouthFLChartData;
   public selectedDate = '2017-01-01';
+  public start;
+  public pressed;
+  public startX;
+  public startWidth;
   public rangeValue: { from: Date; to: Date } = {
     from: new Date(),
     to: (new Date() as any)['fp_incr'](10)
@@ -33,7 +38,7 @@ export class MispricingTablePieChartModuleComponent implements OnInit {
   explodeSlices = false;
   doughnut = true;
   arcWidth = 0.2;
-  constructor() { }
+  constructor(public renderer: Renderer) { }
 
   ngOnInit() {
   	this.colorScheme = {
@@ -124,5 +129,29 @@ export class MispricingTablePieChartModuleComponent implements OnInit {
 
   select(data) {
     console.log('Item clicked', data);
+  }
+  onMouseDown(event){
+    event.preventDefault();
+    event.stopPropagation();
+    this.start = event.target;
+    this.pressed = true;
+    this.startX = event.x;
+    this.startWidth = $(this.start).parent().width();
+    this.initResizableColumns();
+  }
+  initResizableColumns() {
+       this.renderer.listenGlobal('body', 'mousemove', (event) => {
+          if(this.pressed) {
+             let width = this.startWidth + (event.x - this.startX);
+             $(this.start).parent().css({'min-width': width, 'max-   width': width});
+             let index = $(this.start).parent().index() + 1;
+             $('.glowTableBody tr td:nth-child(' + index + ')').css({'min-width': width, 'max-width': width});
+          }
+       });
+       this.renderer.listenGlobal('body', 'mouseup', (event) => {
+       if(this.pressed) {
+           this.pressed = false;
+       }
+     });
   }
 }

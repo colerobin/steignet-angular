@@ -143,6 +143,7 @@ td:nth-child(6),
 td:nth-child(8),
 td:nth-child(10),
 td:nth-child(11) {
+  position: relative;
   border-right: 1px solid #707070;
 }
 
@@ -159,4 +160,17 @@ td:nth-child(8) {
 
 .table-header-left a:hover {
   cursor: pointer;
+}
+
+span.ui-column-resizer {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  width: 8px;
+  height: 100%;
+  padding: 0;
+  cursor: col-resize;
+  border: 1px solid transparent;
 }

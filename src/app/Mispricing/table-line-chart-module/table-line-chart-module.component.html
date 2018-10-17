@@ -47,8 +47,8 @@
     <div class="table-container">
       <table>
         <tr>
-          <th *ngFor="let headText of data[0]">{{headText}}</th>
-          <th>Total</th>
+          <th *ngFor="let headText of data[0]"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>{{headText}}</th>
+          <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Total</th>
         </tr>
         <tr *ngFor="let line of data.slice(1); index as i">
           <td>{{line[0]}}</td>
