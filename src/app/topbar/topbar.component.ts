@@ -19,6 +19,9 @@ export class TopbarComponent implements OnInit {
 
   ngOnInit() {
   }
+  goto_homepage() {
+    window.location.href = "mispricing"
+  }
   passthrough_link(){
   	$.ajax({
       url: this.backend_url+'/api/passthrough',

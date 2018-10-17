@@ -1,4 +1,5 @@
 import { Component, OnInit, NgModule } from '@angular/core';
+import { PlatformLocation } from '@angular/common' 
 import { Globals } from '../../globals';
 
 declare var $: any;
@@ -22,8 +23,25 @@ export class SearchPageComponent implements OnInit {
   public status;
   public return_result;
 
-  constructor(public globals: Globals) { 
+  
+  constructor(public globals: Globals, location: PlatformLocation) { 
     this.backend_url = globals.backend_url;
+     let self = this;
+    location.onPopState(() => {
+
+       if (self.showResult == false) {
+            // Call Back button programmatically as per user confirmation.
+            history.back();
+            // Uncomment below line to redirect to the previous page instead.
+            // window.location = document.referrer // Note: IE11 is not supporting this.
+        } else {
+            // Stay on the current page.
+            history.pushState(null, null, window.location.pathname);
+            self.showResult = false;
+        }
+
+        history.pushState(null, null, window.location.pathname);
+    });
   }
 
   ngOnInit() {

@@ -47,6 +47,7 @@ import { AlertService, AuthenticationService, UserService } from './_services';
 import { AlertComponent } from './_directives';
 import { Globals } from './globals';
 import { FormsModule } from '@angular/forms'; 
+import {RentalInventoryPageComponent} from './Inventory/rental-inventory-page/inventory-page.component'
 import {
     SocialLoginModule,
     AuthServiceConfig,
@@ -77,6 +78,7 @@ export function getAuthServiceConfigs() {
     NavbarComponent,
     SearchPageComponent,
     InventoryPageComponent,
+    RentalInventoryPageComponent,
     MispricingPageComponent,
     ErrorPageComponent,
     TableModuleComponent,

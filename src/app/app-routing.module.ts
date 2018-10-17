@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InventoryPageComponent } from './Inventory/inventory-page/inventory-page.component';
+import { RentalInventoryPageComponent } from './Inventory/rental-inventory-page/inventory-page.component';
 import { MispricingPageComponent } from './Mispricing/mispricing-page/mispricing-page.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ErrorDailyPageComponent } from './error-page/error-daily-page/error-daily-page.component';
@@ -24,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'inventory-rental',
-    component: InventoryPageComponent,
+    component: RentalInventoryPageComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -68,7 +69,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/inventory'
+    redirectTo: '/mispricing'
   }
 ];
 

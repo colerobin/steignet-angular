@@ -1,0 +1,36 @@
+.add-btn-container {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.add-module-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background: #2F345A;
+  i {
+    font-size: 40px;
+    color: white;
+  }
+}
+
+ul {
+  padding-left: 0px;
+}
+
+.tab-selector{
+    color: white;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    span{
+      opacity: 0.7;
+      margin-right: 50px;
+    }
+    span.active{
+      opacity: 1;
+      font-weight: 900;
+    }
+}

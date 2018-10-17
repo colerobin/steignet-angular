@@ -1,4 +1,7 @@
 <div id="navbar">
+  <a id="mispricings" href='/mispricing' [ngClass]="calculateClasses('/mispricing')">
+    <span>Mispricings</span>
+  </a>
   <a id="inventory" href='/inventory' [ngClass]="calculateClasses('/inventory')">
     <div class="inventory-select">
         <span>Inventory</span>
@@ -10,9 +13,7 @@
       </div>
     </div>
   </a>
-  <a id="mispricings" href='/mispricing' [ngClass]="calculateClasses('/mispricing')">
-    <span>Mispricings</span>
-  </a>
+  
   <a id="error-summary" href='/error' [ngClass]="calculateClasses('/error')">
     <div class="error-summary-select">
       <span>Error Summary</span>
