@@ -39,7 +39,7 @@
     </div>
   </div>
   <div class="table-chart-module">
-	  <table>
+	<table>
 	    <tr>
 	      <th>% Discount</th>
 	      <th>ATL</th>
@@ -103,8 +103,9 @@
 	      <td>{{rowtotal[2]}}</td>
 	      <td>{{rowtotal[3]}}</td>
 	    </tr>
-	   </table>
-	   <div>
+   </table>
+   <div class = "row pie-div-container">
+	   <div class="col-xl-4 pie-div">
 	   		<span> {{ATLChartData.name}}</span>
 		   <ngx-charts-pie-chart
 		      class="chart-container"
@@ -124,7 +125,7 @@
 		      (select)="select($event)">
 		    </ngx-charts-pie-chart>
 		</div>
-		<div>
+		<div  class="col-xl-4  pie-div">
 			<span> {{PHLChartData.name}}</span>
 		    <ngx-charts-pie-chart
 		      class="chart-container"
@@ -144,7 +145,7 @@
 		      (select)="select($event)">
 		    </ngx-charts-pie-chart>
 		</div>
-	    <div>
+	    <div  class="col-xl-4 pie-div">
 	    	<span> {{SouthFLChartData.name}}</span>
 		    <ngx-charts-pie-chart
 		      class="chart-container"
@@ -164,5 +165,6 @@
 		      (select)="select($event)">
 		    </ngx-charts-pie-chart>
 		</div>
+	</div>
 	</div>
 </div>

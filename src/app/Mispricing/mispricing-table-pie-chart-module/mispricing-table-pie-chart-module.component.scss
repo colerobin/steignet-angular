@@ -203,15 +203,12 @@
   table{
     float: left;
   }
-  div{
-    float: left;
-    margin-left: 50px;
-    position: relative;
+  .pie-div-container{
+    width: auto;    
   }
-  div:nth-child(2),
-  div:nth-child(3){
-
-    margin-top: 25px;
+  .pie-div{
+    position: relative;
+    margin-top: 20px;
     span {
       position: absolute;
       font-size: 40px;
@@ -219,7 +216,8 @@
       left: 85px;
     }
   }
-  div:nth-child(4){
+  .pie-div:last-child{
+    margin-top: 0px;
     span{
       position: absolute;
       font-size: 40px;
