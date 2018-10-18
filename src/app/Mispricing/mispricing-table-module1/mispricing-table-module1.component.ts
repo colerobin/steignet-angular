@@ -69,4 +69,5 @@ export class MispricingTableModule1Component implements OnInit {
        }
      });
   }
+  
 }

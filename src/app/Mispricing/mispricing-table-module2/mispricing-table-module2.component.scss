@@ -174,3 +174,34 @@ span.ui-column-resizer {
   cursor: col-resize;
   border: 1px solid transparent;
 }
+
+thead tr th{
+  position: relative;
+}
+thead tr th:after{
+  content: "\2193";
+  position: absolute;
+  right: 0.5em;
+  opacity: 0.3;
+  color: red;
+  bottom: 0.2em;
+  font-size: 15px;
+  font-weight: 900;
+}
+thead tr th:before{
+  content: "\2191";
+  position: absolute;
+  right: 1em;
+  opacity: 0.3;
+  color: #00c300;
+  bottom: 0.2em;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+thead tr th.showafter:after{
+  opacity: 1;
+}
+thead tr th.showbefore:before{
+  opacity: 1;
+} 

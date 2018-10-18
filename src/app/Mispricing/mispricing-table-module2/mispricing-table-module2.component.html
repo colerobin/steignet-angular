@@ -49,20 +49,22 @@
     </div>
   </div>
   <table>
+    <thead>
     <tr>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>MLS ID</th>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Original Price</th>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Prev Price</th>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Ask Price</th>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>$ Change</th>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>$ Change OLP</th>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>% Change</th>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>% Change OLP</th>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Zestimate</th>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Redfin</th>
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Average</th> 
-      <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>AVM Delta Premium</th>
+      <th (click)="sorts(0, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>MLS ID</th>
+      <th (click)="sorts(1, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Original Price</th>
+      <th (click)="sorts(2, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Prev Price</th>
+      <th (click)="sorts(3, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Ask Price</th>
+      <th (click)="sorts(4, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>$ Change</th>
+      <th (click)="sorts(5, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>$ Change OLP</th>
+      <th (click)="sorts(6, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>% Change</th>
+      <th (click)="sorts(7, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>% Change OLP</th>
+      <th (click)="sorts(8, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Zestimate</th>
+      <th (click)="sorts(9, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Redfin</th>
+      <th (click)="sorts(10, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Average</th> 
+      <th (click)="sorts(11, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>AVM Delta Premium</th>
     </tr>
+    </thead>
     <tr *ngFor="let line of data">
       <td>{{line[0]}}</td>
       <td>{{formatPrice(line[1])}}</td>

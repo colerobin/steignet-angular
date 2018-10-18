@@ -40,6 +40,7 @@ export class TableModuleComponent implements OnInit {
       this.totalSum += temp;
     }
 
+
     $('tr').each(function(){
       if($(this).parent().parent().attr('title') == "AVM Inventory Checker"){
         if(parseInt($('td', $(this)).eq(1).html()) > parseInt($('td', $(this)).eq(2).html())){
@@ -49,6 +50,13 @@ export class TableModuleComponent implements OnInit {
           $('td', $(this)).eq(3).css('color','red');
         }
       }
+    });
+    $(document).ready(function(){
+      $('.table-module-top').mousedown(function(){
+        $('html').one('mousedown', function(event){
+        event.stopPropagation();
+        });
+      });
     });
   }
 
@@ -83,5 +91,60 @@ export class TableModuleComponent implements OnInit {
        }
      });
   }
+  sorts(type, event){
     
+    let target = event.target;
+    let results = this.data.slice(1);
+    if($(target).hasClass('showafter')){
+      $(target).removeClass('showafter');
+      $(target).addClass('showbefore');
+      results.sort(function(a,b){
+        if(type == 0)
+        {
+          if(a[type] > b[type])
+              return 1;
+          else
+              return -1;
+        }
+        else
+         return  a[type] - b[type];
+      });
+
+    }
+    else if($(target).hasClass('showbefore')){
+      $(target).removeClass('showbefore');
+      $(target).addClass('showafter');
+      results.sort(function(a,b){
+        if(type == 0)
+        {
+          if(a[type] > b[type])
+              return -1;
+          else
+              return 1;
+        }
+        else
+         return  b[type] - a[type];
+      });
+    }
+    else{
+      $('th').removeClass('showbefore');
+      $('th').removeClass('showafter');
+      $(target).addClass('showbefore');
+      results.sort(function(a,b){
+        if(type == 0)
+        {
+          if(a[type] > b[type])
+              return 1;
+          else
+              return -1;
+        }
+        else
+         return  a[type] - b[type];
+      });
+    }
+    for(let i = 1; i < this.data.length; i ++){
+      this.data[i] = results[i - 1];
+    }
+  }
+
 }

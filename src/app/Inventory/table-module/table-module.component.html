@@ -29,7 +29,7 @@
   <table title="{{title}}">
     <thead>
       <tr>
-        <th *ngFor="let headText of data[0]"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>{{headText}}</th>
+        <th *ngFor="let headText of data[0]; index as i" (click)="sorts(i, $event)"><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>{{headText}}</th>
         <th><span class = "ui-column-resizer" (mousedown) = "onMouseDown($event)"></span>Total</th>
       </tr>
     </thead>
