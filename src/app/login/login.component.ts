@@ -39,6 +39,10 @@ export class LoginPageComponent implements OnInit {
   	this.authenticationService.logout();
   	$("#container").html($(".login-page-container"));
   	this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+
+    $(document).ready(function(){
+      $('body').css('zoom','80%');
+    });
   }
 
   public socialSignIn(socialPlatform : string) {

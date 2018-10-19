@@ -39,12 +39,14 @@ export class PropertySearchModuleComponent implements OnInit {
 	attachselect() {
 		$('.radio-property').removeClass('radio-selected');
 		$('#attachdiv').addClass('radio-selected');
-		this.property_type_value = "attach"
+		this.property_type_value = "attach";
+		this.valuechange();
 	}
 	deattachselect(){
 		$('.radio-property').removeClass('radio-selected');
 		$('#deattachdiv').addClass('radio-selected');
 		this.property_type_value = "deattach"
+		this.valuechange();
 	}
 	valuechange(){
 
